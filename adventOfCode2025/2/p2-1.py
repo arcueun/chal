@@ -1,4 +1,4 @@
-# for each number (in the range) simple parsing 
+# read from file and present it as array of ranges
 def parseInput():
     # with open("e2.txt", "r") as f:
     with open("2.txt", "r") as f:
@@ -8,7 +8,8 @@ def parseInput():
         #     print(r) # ensure we split properly
         return s
 
-
+# given ranges in array of ['aaaa-bbbb', 'cccc-dddd'] 
+# find the bad numbers between them 
 def findBadIds(r):
     badNums = []
     for s in r:
@@ -41,7 +42,6 @@ def checkCase(s):
     strlen = int(len(s) / 2)
     frontHalf = s[strlen:]
     backHalf = s[:strlen]
-    # print('f', frontHalf, 'b', backHalf) # check half parsing works
     if frontHalf == backHalf: 
         print(s, 'is bad')
         return int(s)

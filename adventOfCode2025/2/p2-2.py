@@ -1,13 +1,14 @@
 import time
 
-# for each number (in the range) simple parsing 
+# read from file and present it as array of ranges
 def parseInput():
     # with open("e2.txt", "r") as f:
     with open("2.txt", "r") as f:
         s = f.read().split(",")
         return s
 
-# function that handles finding bad ids. calls check function 
+# given ranges in array of ['aaaa-bbbb', 'cccc-dddd'] 
+# find the bad numbers between them 
 def findBadIds(r):
     badNums = []
     for s in r:
@@ -26,7 +27,8 @@ def findBadIds(r):
 
     return badNums
 
-# given an int (len of string), return an array of numbers that fit inside it 
+# given a length of str, return an array of that string's common factors
+# i.e. len 10 returns [5,2,1]
 def findLensToCheck(l):
     lens = []
     i = 1
@@ -34,26 +36,25 @@ def findLensToCheck(l):
     while i < l: 
         if l % i == 0:
             lens.append(i)
-            # print('length', i, 'fits without remainder')
         i += 1
 
     return lens
 
-# splits into front and half, checks if those halves are identical
-# but in p2 we will need to change this to check for any repetition of numbers
+# checks cases, first by finding factors of the length of a string 
+# then cut that str into equal lengths for each found factor 
+# check that they are all equal, if they are equal, add them to our return arr,
+# otherwise do nothing.
 def checkCase(s):
     strlen = int(len(s))
     patternLens = findLensToCheck(strlen)
     badIds = []
 
-    # extract this to another function 
     for subLen in patternLens:
-        # print('sublen test is ', subLen)
         parts = [s[i:i + subLen] for i in range(0, len(s), subLen)] # split str into equal length
         # print(parts)
         equal = True
 
-        # compare the start of segment to rest of it 
+        # compare the start of the segment to the rest of it
         for p in parts:
             if parts[0] != p:
                 equal = False
@@ -72,7 +73,6 @@ def checkCase(s):
 startT = time.perf_counter()
 r = parseInput()
 badIds = findBadIds(r)
-# print(badIds)
 res = 0
 for i in badIds:
     res += i
