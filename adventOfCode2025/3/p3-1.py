@@ -1,21 +1,9 @@
-# find the biggest number in the string and save it 
-# find the second biggest number in the string *after* the number we just found.
-
-# um, no, it doesn't, it fails if the biggest number is at the end of the string
-# is this really a o(n^2) approach surely not 
-# lets go for that for now 
-# starting with the first number, compare it in comparison with every other number in that string 
-# repeat for every single one
-
-# find the 3 biggest numbers in the array 
-# find their positions 
-# find the configuration of the 3 numbers that produces the biggest number 
-    # of digits abc
-    # ab, ac, bc, ac 
+# iterate through an array, finding the highest joltage, that is, 
+# two numbers of a string that create the largest integer without changing the numbers' order
 
 def read_input():
-    # with open("e3.txt", "r") as f:
-    with open("3.txt", "r") as f:
+    with open("e3.txt", "r") as f:
+    # with open("3.txt", "r") as f:
         s = f.read().split()
         i = 0
         # print(s)
