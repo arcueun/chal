@@ -1,7 +1,7 @@
 # read from file and present it as array of ranges
 def parseInput():
     # with open("e2.txt", "r") as f:
-    with open("2.txt", "r") as f:
+    with open("2.wtxt", "r") as f:
         s = f.read().split(",")
         
         # for r in s:
