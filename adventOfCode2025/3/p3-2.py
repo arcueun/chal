@@ -1,4 +1,5 @@
-# find the largest joltage with 12 numbers
+# find the largest 12 digit voltage
+
 def read_input():
     # with open("e3.txt", "r") as f:
     with open("3.txt", "r") as f:
@@ -6,18 +7,19 @@ def read_input():
         i = 0
         return s
 
-# now we must account for 12 batteries 
+# now we must account for 12 batteries like so... 
+# 1-12 already exists, and we see 13 join us 
+# 2-13 
+# howeverm a number in the middle could be excluded, creating larger joltage
+# 1,3-13
+# 1-2,4-13
+# 1-3,5-13 
+# ...
+# 1-11,13 
+# find a nice way to interate thru all of it 
 def findLargestJolts(s):
     biggestJolts = s[:12]
 
-    # 1-12 already exists, and we see 13 join us 
-    # 2-13 
-    # howeverm a number in the middle could be excluded, creating larger joltage
-    # 1,3-13
-    # 1-2,4-13
-    # 1-3,5-13 
-    # ...
-    # 1-11,13 
     print(biggestJolts)
     print(len(biggestJolts))
     i = 12
