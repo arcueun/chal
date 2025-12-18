@@ -10,13 +10,13 @@ def read_input():
 # now we must account for 12 batteries like so... 
 # 1-12 already exists, and we see 13 join us 
 # 2-13 
-# howeverm a number in the middle could be excluded, creating larger joltage
+# however, a number in the middle could be excluded, creating larger joltage
+# so we must check all possible positions to remove like so... 
 # 1,3-13
 # 1-2,4-13
 # 1-3,5-13 
 # ...
-# 1-11,13 
-# find a nice way to interate thru all of it 
+# 1-11,13
 def findLargestJolts(s):
     biggestJolts = s[:12]
 

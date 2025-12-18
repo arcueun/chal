@@ -1,6 +1,4 @@
-# iterate through an array, finding the highest joltage, that is, 
-# two numbers of a string that create the largest integer without changing the numbers' order
-# ie find the largest two digit voltage
+# ie find the largest two digit joltage by iterating thru array
 
 def read_input():
     # with open("e3.txt", "r") as f:
