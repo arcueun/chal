@@ -2,8 +2,8 @@
 # two numbers of a string that create the largest integer without changing the numbers' order
 
 def read_input():
-    with open("e3.txt", "r") as f:
-    # with open("3.txt", "r") as f:
+    # with open("e3.txt", "r") as f:
+    with open("3.txt", "r") as f:
         s = f.read().split()
         i = 0
         # print(s)
